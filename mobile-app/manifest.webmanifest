@@ -1,0 +1,15 @@
+{
+  "name": "麻雀スコア集計",
+  "short_name": "MJscore",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f1f3f4",
+  "theme_color": "#1f6f8b",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

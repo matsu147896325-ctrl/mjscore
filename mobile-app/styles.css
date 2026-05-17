@@ -1,0 +1,144 @@
+:root {
+  color-scheme: light;
+  --bg: #f1f3f4;
+  --line: #7c8b96;
+  --game: #ccecf6;
+  --total: #ffc000;
+  --text: #111;
+  --minus: #c21d34;
+  --button: #dfeefb;
+  --button-border: #6f94b3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "BIZ UDPGothic", "BIZ UDPゴシック", system-ui, sans-serif;
+  font-size: 15px;
+}
+
+.app {
+  min-height: 100svh;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.settings {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  align-items: end;
+}
+
+label {
+  display: grid;
+  gap: 4px;
+  font-weight: 700;
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+.settings input,
+.settings select {
+  width: 100%;
+  min-height: 34px;
+  border: 1px solid #8899a8;
+  background: #fff;
+  padding: 4px 6px;
+}
+
+.scoreboard {
+  overflow-x: auto;
+  border-top: 2px solid #000;
+  border-left: 1px solid var(--line);
+  background: #fff;
+}
+
+.grid {
+  min-width: 640px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.cell {
+  min-width: 0;
+  min-height: 30px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 4px 6px;
+}
+
+.name {
+  width: 100%;
+  min-width: 0;
+  height: 30px;
+  border-top: 0;
+  border-left: 0;
+  border-radius: 0;
+  background: #fff;
+}
+
+.total-row .cell {
+  background: var(--total);
+}
+
+.game-row:nth-child(odd) .cell {
+  background: var(--game);
+}
+
+.game-row input {
+  width: 100%;
+  height: 100%;
+  min-height: 30px;
+  border: 0;
+  background: transparent;
+  text-align: center;
+  padding: 4px 6px;
+}
+
+.minus {
+  color: var(--minus);
+}
+
+.actions {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+button {
+  min-height: 36px;
+  border: 1px solid var(--button-border);
+  background: linear-gradient(#fff, var(--button));
+  padding: 6px 14px;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .settings {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .settings label:last-child {
+    grid-column: span 2;
+  }
+
+  .grid {
+    min-width: 520px;
+  }
+}

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f6f8b">
+  <title>麻雀スコア集計</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="settings" aria-label="基本設定">
+      <label>
+        <span>持ち点</span>
+        <input id="startPoint" inputmode="numeric" value="25,000">
+      </label>
+      <label>
+        <span>返し</span>
+        <input id="returnPoint" inputmode="numeric" value="30,000">
+      </label>
+      <label>
+        <span>ウマ</span>
+        <select id="uma">
+          <option value="10-20" selected>10-20</option>
+          <option value="10-30">10-30</option>
+          <option value="5-10">5-10</option>
+          <option value="none">なし</option>
+        </select>
+      </label>
+    </header>
+
+    <section class="scoreboard" aria-label="スコア表">
+      <div class="grid row rank-row">
+        <div class="cell label">順位</div>
+        <div class="cell rank" data-rank="0">1位</div>
+        <div class="cell rank" data-rank="1">2位</div>
+        <div class="cell rank" data-rank="2">3位</div>
+        <div class="cell rank" data-rank="3">4位</div>
+      </div>
+      <div class="grid row name-row">
+        <div class="cell label">氏名</div>
+        <input class="cell name" aria-label="1人目の氏名">
+        <input class="cell name" aria-label="2人目の氏名">
+        <input class="cell name" aria-label="3人目の氏名">
+        <input class="cell name" aria-label="4人目の氏名">
+      </div>
+      <div class="grid row total-row">
+        <div class="cell label">TOTAL</div>
+        <div class="cell total" data-total="0">0.0</div>
+        <div class="cell total" data-total="1">0.0</div>
+        <div class="cell total" data-total="2">0.0</div>
+        <div class="cell total" data-total="3">0.0</div>
+      </div>
+      <div id="games"></div>
+    </section>
+
+    <footer class="actions">
+      <button id="resetButton" type="button">リセット</button>
+      <button id="calculateButton" type="button">全試合を計算</button>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
